@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    /*
+    
+    OBJECTIVE         : Write a program which return an integer representing the number of matching pairs of socks that are available.
+    
+    INPUT PARAMETERS  : 
+                        total_no_of_socks : the number of socks in the pile
+                        color             : the colors of each sock
+                        
+    OUTPUT            : Return the total number of matching pairs of socks that John can sell.
+    
+    */
+    
+	  int total_no_of_socks, count=0, pair=0;
+	  int color[total_no_of_socks];
+	
+	  cout<<"Enter the total number of socks : ";
+	  cin>>total_no_of_socks;
+	
+	  cout<<"Enter the color of each sock  : \n";
+	  for(int i=0; i<total_no_of_socks; i++)
+	  {
+		    cin>>color[i];
+	  }
+	
+	  for(int i=0; i<total_no_of_socks; i++)
+	  {
+		    for(int j=i+1; j<total_no_of_socks; j++)
+		    {
+		        if(color[i] == color[j])
+		            count++;
+		    }
+	      pair = count/2;	
+	   }
+     
+	   cout<<"Total number of matching pairs of socks : "<<pair;
+	   return 0;
+}
